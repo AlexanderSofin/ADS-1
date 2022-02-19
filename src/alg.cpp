@@ -8,10 +8,10 @@
 bool checkPrime(uint64_t value) {
 // вставьте код функции
   bool isPrime = true;
-    int del = sqrt(value);
-    if ((value % 2 == 0 && value != 2) || value < 2) isPrime = false;
-    for ( int i = 2; i <= del; i++) {
-        if (value % i == 0) {
+    uint64_t del = sqrt ( value );
+    if ( ( value % 2 == 0 && value != 2 ) || value < 2 ) isPrime = false;
+    for ( int i = 2 ; i <= del ; i++ ) {
+        if ( value % i == 0 ) {
             isPrime = false;
             break;
         }
@@ -21,12 +21,12 @@ bool checkPrime(uint64_t value) {
 
 uint64_t nPrime(uint64_t n) {
 // вставьте код функции
-  int count = 0;
-    int i = 0;
-        for (int j = 2; j <= INT_MAX; j++ ) {
+  uint64_t count = 0;
+    uint64_t i = 0;
+        for ( int j = 2 ; j <= ULONG_MAX ; j++ ) {
             if (checkPrime(j)) {
                 i += 1;
-                if (i == n) {
+                if ( i == n ) {
                     count = j;
                     break;
                 }
@@ -37,8 +37,8 @@ uint64_t nPrime(uint64_t n) {
 
 uint64_t nextPrime(uint64_t value) {
 // вставьте код функции
-  int res = 0;
-    for (int i = value + 1; i <= INT_MAX; i++) {
+  uint64_t res = 0;
+    for ( uint64_t i = value + 1 ; i <= ULONG_MAX ; i++ ) {
         if (checkPrime(i)) {
             res = i;
             break;
@@ -49,9 +49,9 @@ uint64_t nextPrime(uint64_t value) {
 
 uint64_t sumPrime(uint64_t hbound) {
 // вставьте код функции
-  int res = 0;
-    for (int i = 2; i < hbound; i++) {
-        if (checkPrime(i)) {
+  uint64_t res = 0;
+    for ( uint64_t i = 2 ; i < hbound ; i++ ) {
+        if ( checkPrime(i) ) {
             res += i;
         }
     }
